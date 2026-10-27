@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Várias atividades juntas</title>
+    <style>
+        /* configurações */
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: #f8fafc;
+            color: 333;
+            padding: 80px 20px 40px 20px;
+        }
+        .secao-atividades {
+            background: white;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .titulo-atividade {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #475569;
+            font-size: 20px;
+        }
+        /* atividade 1- Seletores e Tipografia */
+        header h1 {
+            color: #6a1b9a;
+            font-family: arial;
+        }
+
+header p { 
+    color: #333;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.destaque {
+    background-color: #fef08a;
+    padding: 2xp 6xp;
+    border-radius: 4xp;
+}
+
+/* atividade 2- Box Model */
+.caixa-boxmodel {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #6a1b9a;
+    margin: 20px auto;
+    box-sizing: border-box;
+    background-color: #f3e5f5;
+    border-radius: 8px;
+}
+
+/* atividade 3- Posicionamento */
+.menu-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #6a1b9a;
+    padding: 15px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-fixo a { 
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pai-relativo { 
+    position: relative;
+    top: 20px;
+    background-color: #e2e8f0;
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.filho-absoluto {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background-color: #e11d48;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* atividade 4- Pseudo-classes e Pseudo-elementos */
+.btn-interativo {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-interativo:hover {
+    background-color: #2980b9;
+}
+.btn-interativo:active {
+    background-color: #1f5f8b;
+}
+/* input ativo */
+.campo-input { 
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+.campo-input:focus {
+    border-color: #6a1b9a;
+}
+
+.lista-zebrada li:nth-child(even) {
+    background-color: #e2e8f0;
+}
+
+.titulo-emoji::before {
+    content: "⭐";
+}
+.titulo-emoji::after {
+    content: "⭐";
+}
+
+/* atividade 5- Flexbox */
+.flex-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: #f1f5f9;
+    border: 2px dashed #cdb5e1;
+    gap: 15px;
+}
+
+.flex-caixa {
+    padding: 15px 25px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+
+/* atividade 6- CSS Grid */
+.grid-container {
+    display: grid;
+    gap: 15px;
+}
+
+.grid-item {
+    background-color: #10b981;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+@media (max-width: 599px) { 
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* atividade 7- Transição e Animação */
+.btn-transicao {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+.btn-transicao:hover {
+    background-color: #ec4899;
+}
+@keyframes pulsarEfeito {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+.elemento-pulso {
+    background-color: #f59e0b;
+    color: white;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    animation: pulsarEfeito 1.5s infinite ease-in-out;
+}
+
+
+/* atividade 8- Layout Responsivo (Grid Areas) */
+.layout-areas {
+    display: grid;
+    gap: 10px;
+}
+.area-header  { grid-area: header; background-color: #475569; color: white; padding: 15px; }
+.area-sidebar { grid-area: sidebar; background-color: #94a3b8; color: white; padding: 15px; }
+.area-main    { grid-area: main; background-color: #cbd5e1; padding: 15px; }
+.area-footer  { grid-area: footer; background-color: #475569; color: white; padding: 15px; }
+
+@media (max-width: 767px) {
+    .layout-areas {
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+}
+@media (min-width: 768px) {
+    .layout-areas {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: 
+            "header header"
+            "sidebar main"
+            "footer footer";
+    }
+}
+
+/* atividade 9- Galeria de Imagens */
+.galeria-completa {
+    display: grid;
+    gap: 15px;
+}
+
+.galeria-item {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #333333;
+    padding: 25px;
+    font-size: 24px;
+    border-radius: 8px;
+    text-align: center;
+    /* Adiciona uma transição suave para o efeito hover */
+    transition: transform 0.3s ease; 
+}
+
+.galeria-item:hover {
+    transform: scale(1.08);
+}
+
+@media (max-width: 599px) {
+    .galeria-completa { grid-template-columns: 1fr; }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+    .galeria-completa { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+    .galeria-completa { grid-template-columns: repeat(3, 1fr); }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Atividade 3 - Menu Fixo -->
+  <nav class="menu-fixo">
+    <a href="#">Home</a>
+    <a href="#">Sobre</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <!-- Atividade 1 - Seletores e Tipografia -->
+  <header class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 1 – Seletores e Tipografia</h3>
+    <h1>Meus Exercícios</h1>
+    <p>
+    Olá! Meu nome é Rayssa,aqui está um pouco de tudo do que venho aprendendo nas aulas de <span class="destaque">front-ed.</span>
+    </p>
+  </header>
+
+  <!-- Atividade 2 - Box Model -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 2 – Box Model</h3>
+    <div class="caixa-boxmodel">
+      Essa caixa usa o box model.
+    </div>
+  </div>
+
+  <!-- Atividade 3 - Posicionamento Relativo e Absoluto -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 3 – Posicionamento</h3>
+    <div class="pai-relativo">
+      Base de elementos, pai.
+      <div class="filho-absoluto">Filho</div>
+    </div>
+  </div>
+
+  <!-- Atividade 4 - Pseudo-classes e Pseudo-elementos -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 4 – Pseudo-classes e Pseudo-elementos</h3>
+    <h2 class="titulo-emoji">Estrelas</h2>
+    <br>
+    <button class="btn-interativo">Clique aqui</button>
+    <input type="text" class="campo-input" placeholder="Clique aqui">
+    
+    <ul class="lista-zebrada" style="margin-top: 20px; list-style-position: inside;">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </div>
+
+  <!-- Atividade 5 - Flexbox -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 5 – Flexbox</h3>
+    <div class="flex-container">
+      <div class="flex-caixa">1</div>
+      <div class="flex-caixa">2</div>
+      <div class="flex-caixa">3</div>
+    </div>
+  </div>
+
+  <!-- Atividade 6 - CSS Grid -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 6 – CSS Grid</h3>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+    </div>
+  </div>
+
+  <!-- Atividade 7 - Transição e Animação -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 7 – Transição e Animação</h3>
+    <button class="btn-transicao">passe o mouse aqui</button>
+    <div class="elemento-pulso">animação</div>
+  </div>
+
+  <!-- Atividade 8 - Layout Responsivo (Grid Areas) -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 8 – Layout Responsivo</h3>
+    <div class="layout-areas">
+      <div class="area-header">💻 Header (Topo)</div>
+      <div class="area-sidebar">Sidebar</div>
+      <div class="area-main">Main Content: Conteúdo principal</div>
+      <div class="area-footer">Feito por Rayssa   2026</div>
+    </div>
+  </div>
+
+  <!-- Atividade 9 - Galeria de Imagens Totalmente Separada -->
+  <div class="secao-atividades">
+    <h3 class="titulo-atividade">Atividade 9 – Galeria de Imagens (Efeito Hover + 12 Itens)</h3>
+    <div class="galeria-completa">
+      <div class="galeria-item">💻 1</div>
+      <div class="galeria-item">📱 2</div>
+      <div class="galeria-item">📸 3</div>
+      <div class="galeria-item">⌨️ 4</div>
+      <div class="galeria-item">🖱️ 5</div>
+      <div class="galeria-item">🤖 6</div>
+      <div class="galeria-item">🎮 7</div>
+      <div class="galeria-item">⚙️ 8</div>
+      <div class="galeria-item">🖨️ 9</div>
+      <div class="galeria-item">🖥️ 10</div>
+      <div class="galeria-item">🔌 11</div>
+      <div class="galeria-item">🔋 12</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

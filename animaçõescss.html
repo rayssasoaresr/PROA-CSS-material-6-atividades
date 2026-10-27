@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animações CSS</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f0ff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .sub {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* ========================================
+      EXEMPLO 1: PULSAR (PULSE)
+      ======================================== */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* ========================================
+      EXEMPLO 2: BALANÇAR (SHAKE)
+      ======================================== */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-20px); }
+      50% { transform: translateX(20px); }
+      75% { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake {
+      background-color: #e74c3c;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: shake 0.8s infinite;
+    }
+
+    /* ========================================
+      EXEMPLO 3: CORES ALTERNADAS
+      ======================================== */
+    @keyframes cores {
+      0% { background-color: #3498db; }
+      50% { background-color: #e74c3c; }
+      100% { background-color: #2ecc71; }
+    }
+
+    .cores {
+      color: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: cores 2s infinite;
+    }
+
+    /* ========================================
+      EXEMPLO 4: GIRO (SPIN)
+      ======================================== */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .spin {
+      background-color: #f39c12;
+      color: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: spin 2s infinite linear;
+    }
+
+    /* ========================================
+      EXEMPLO 5: MOVIMENTO (SLIDE)
+      ======================================== */
+    @keyframes slide {
+      0% { transform: translateX(-50px); opacity: 0; }
+      50% { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(50px); opacity: 0; }
+    }
+
+    .slide {
+      background-color: #9b59b6;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: slide 2s infinite;
+    }
+
+    /* ========================================
+      EXEMPLO 6: PISCAR (BLINK)
+      ======================================== */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .blink {
+      background-color: #1abc9c;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 18px;
+      animation: blink 1s infinite;
+    }
+
+    /* ========================================
+      ORGANIZAÇÃO DOS EXEMPLOS
+      ======================================== */
+    .exemplo {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 20px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .exemplo h3 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .exemplo code {
+      background: #f3e5f5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #6a1b9a;
+    }
+
+    .legenda {
+      color: #888;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎬 Animações CSS</h1>
+  <p class="sub">Sequência de mudanças automáticas e contínuas</p>
+
+  <!-- ==========================================
+     EXEMPLO 1: PULSAR
+     ========================================== -->
+  <div class="exemplo">
+    <h3>1 Pulsar (Pulse)</h3>
+    <div class="pulse">Pulse</div>
+    <p class="legenda"><code>@keyframes pulse { 0% scale(1) → 50% scale(1.2) → 100% scale(1) }</code></p>
+  </div>
+
+  <!-- ==========================================
+     EXEMPLO 2: BALANÇAR
+     ========================================== -->
+  <div class="exemplo">
+    <h3>2 Balançar (Shake)</h3>
+    <div class="shake">Shake</div>
+    <p class="legenda"><code>@keyframes shake { 0% → 25% → 50% → 75% → 100% }</code></p>
+  </div>
+
+  <!-- ==========================================
+     EXEMPLO 3: CORES
+     ========================================== -->
+  <div class="exemplo">
+    <h3>3 Cores alternadas</h3>
+    <div class="cores">Cores</div>
+    <p class="legenda"><code>@keyframes cores { 0% azul → 50% vermelho → 100% verde }</code></p>
+  </div>
+
+  <!-- ==========================================
+     EXEMPLO 4: GIRO
+     ========================================== -->
+  <div class="exemplo">
+    <h3>4 Giro (Spin)</h3>
+    <div class="spin">Spin</div>
+    <p class="legenda"><code>@keyframes spin { 0% rotate(0) → 100% rotate(360deg) }</code></p>
+  </div>
+
+  <!-- ==========================================
+     EXEMPLO 5: MOVIMENTO
+     ========================================== -->
+  <div class="exemplo">
+    <h3>5 Movimento (Slide)</h3>
+    <div class="slide">Slide</div>
+    <p class="legenda"><code>@keyframes slide { 0% → 50% → 100% }</code></p>
+  </div>
+
+  <!-- ==========================================
+     EXEMPLO 6: PISCAR
+     ========================================== -->
+  <div class="exemplo">
+    <h3>6 Piscar (Blink)</h3>
+    <div class="blink">Blink</div>
+    <p class="legenda"><code>@keyframes blink { 0% opacidade 1 → 50% opacidade 0 → 100% opacidade 1 }</code></p>
+  </div>
+
+</body>
+</html>

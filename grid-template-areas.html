@@ -1,0 +1,197 @@
+Grid-template-areas
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid-template-areas</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f0ff;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #6a1b9a;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ========================================
+      GRID COM ÁREAS NOMEADAS
+      ======================================== */
+    .container {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: 80px 1fr 60px;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      min-height: 300px;
+    }
+
+    /* ========================================
+      CADA ÁREA
+      ======================================== */
+    .header {
+      grid-area: header;
+      background: #3498db;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: #2ec871;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main {
+      grid-area: main;
+      background: #74c3c7;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #f39c12;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ========================================
+      CÓDIGO DO CSS
+      ======================================== */
+    .codigo {
+      background: #1a1a2e;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+
+    .codigo .azul { color: #9cdcfe; }
+    .codigo .laranja { color: #ce9178; }
+    .codigo .verde { color: #6a9955; }
+    .codigo .amarelo { color: #d7ba7d; }
+
+    /* ========================================
+      RESPONSIVO
+      ======================================== */
+    @media (max-width: 500px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📐 grid-template-areas</h1>
+
+  <!-- ==========================================
+     GRID COM ÁREAS NOMEADAS
+     ========================================== -->
+  <div class="container">
+    <div class="header">HEADER</div>
+    <div class="sidebar">SIDEBAR</div>
+    <div class="main">MAIN</div>
+    <div class="footer">FOOTER</div>
+  </div>
+
+  <!-- ==========================================
+     CÓDIGO DO CSS
+     ========================================== -->
+  <div class="codigo">
+    <span class="verde">/* CSS do Grid */</span><br><br>
+
+    <span class="amarelo">.container</span> {<br>
+    &nbsp;&nbsp;<span class="azul">display</span>: <span class="laranja">grid</span>;<br>
+    &nbsp;&nbsp;<span class="azul">grid-template-columns</span>: <span class="laranja">200px 1fr</span>;<br>
+    &nbsp;&nbsp;<span class="azul">grid-template-rows</span>: <span class="laranja">80px 1fr 60px</span>;<br>
+    &nbsp;&nbsp;<span class="azul">grid-template-areas</span>: <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="laranja">"header header"</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="laranja">"sidebar main"</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="laranja">"footer footer"</span>;<br>
+    &nbsp;&nbsp;<span class="azul">gap</span>: <span class="laranja">10px</span>;<br>
+    }<br><br>
+
+    <span class="amarelo">.header</span> { <span class="azul">grid-area</span>: <span class="laranja">header</span>; }<br>
+    <span class="amarelo">.sidebar</span> { <span class="azul">grid-area</span>: <span class="laranja">sidebar</span>; }<br>
+    <span class="amarelo">.main</span> { <span class="azul">grid-area</span>: <span class="laranja">main</span>; }<br>
+    <span class="amarelo">.footer</span> { <span class="azul">grid-area</span>: <span class="laranja">footer</span>; }
+  </div>
+
+  <!-- ==========================================
+     TABELA VISUAL
+     ========================================== -->
+  <div style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #6a1b9a;">
+    <h3>📊 Visualização do Layout</h3>
+    <table border="1" cellpadding="12" cellspacing="0" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+      <tr style="background: #3498db; color: white;">
+        <td colspan="2" style="text-align: center; font-weight: bold;">HEADER</td>
+      </tr>
+      <tr>
+        <td style="background: #2ec871; color: white; width: 30%; font-weight: bold;">SIDEBAR</td>
+        <td style="background: #74c3c7; color: white; font-weight: bold;">MAIN</td>
+      </tr>
+      <tr style="background: #f39c12; color: white;">
+        <td colspan="2" style="text-align: center; font-weight: bold;">FOOTER</td>
+      </tr>
+    </table>
+    <p style="margin-top: 10px; color: #555; font-size: 14px;">
+      <code>grid-template-areas</code> cria um layout nomeado diretamente no CSS
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+<style>
+    body {
+        font-family: Arial,sans-serif;
+        background-color: #b9c0c7;
+        text-align: center;
+        padding: 50px;
+    }
+
+    h2 { 
+        color: #0f172a;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    /* botão transição */
+    .meu-botao {
+        background-color: #4f46e5;
+        color: white;
+        border: none;
+        padding: 15px 35px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.4s ease;
+    }
+    .meu-botao:hover {
+        background-color: #110d3e;
+    }
+
+    /*animação pulsar */
+
+    /*animação*/
+    @keyframes quicarPulsar {
+        0% { transforme: scale(1);}
+        50% { transform: scale(1.25);}
+        100% { transform: scale(1);}
+    }
+
+    .caixa-pulso { 
+        background-color: #10b981;
+        color: white;
+        width: 120px;
+        height: 0 auto;
+        margin: 0 auto;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+        animation: quicarPulsar 1.2s infinite ease-in-out;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Animações</h1>
+
+    <h2>transição</h2>
+    <button class="meu-botao"> passe o mouses aqui</button>
+
+    <h2>pulsando</h2>
+    <div class="caixa-pulso">..</div>
+
+</body>
+</html>
